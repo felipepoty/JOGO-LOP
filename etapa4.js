@@ -1,7 +1,9 @@
 
+var xi=479
+var yi=250
 var x =10
-var qy = 160
-var y = 160
+var qy = 250
+var y = 260
 var u= 5
 var dt=5
 var dx=x
@@ -9,7 +11,7 @@ var disparo = false
 var dy= y
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(500, 500);
   frameRate(30);
   x=10
 }
@@ -39,22 +41,30 @@ function draw() {
 
   ellipse(x, y, 20, 40)
   fill(200,20,90);
-  if(keyIsDown(UP_ARROW))
-  { y += 3
-  }
   if(keyIsDown(DOWN_ARROW))
-  {y -= 3
+  { y += 5
+  }
+  if(keyIsDown(UP_ARROW))
+  {y -= 5
+  }
+  if(y<=20){
+    y=20
+  }
+  if(y>=480){
+    y=480
   }
   ellipse(dx,dy,10,5)
 
   
   
-  rect(280, 150,20,20)
+  rect(xi, yi,20,20)
   fill(20,200,80);
   
   fill(255);
   
 
-
+ 
+ 
 }
+
 
