@@ -1,7 +1,4 @@
 
-// Mova seu mouse na janela ao lado
-// para ver o processing em ação
-
 var xi=479
 var yi=250
 var x =20
@@ -14,6 +11,7 @@ var disparo = false
 var dy= y
 var qy2=0
 var u2=7
+var ui=5
 
 function setup() {
   createCanvas(500, 500);
@@ -75,6 +73,13 @@ function draw() {
   
   
   rect(xi, yi,20,20)
+  yi=yi+ui
+  if(yi>350){
+    ui= -ui
+  }
+  if(yi<150){
+    ui= -ui
+  }
   fill(20,200,80);
   
   fill(255);
