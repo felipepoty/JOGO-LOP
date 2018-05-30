@@ -1,7 +1,10 @@
 
+// Mova seu mouse na janela ao lado
+// para ver o processing em ação
+
 var xi=479
 var yi=250
-var x =10
+var x =20
 var qy = 250
 var y = 260
 var u= 5
@@ -9,6 +12,8 @@ var dt=5
 var dx=x
 var disparo = false
 var dy= y
+var qy2=0
+var u2=7
 
 function setup() {
   createCanvas(500, 500);
@@ -26,10 +31,18 @@ function keyPressed(){
 
 function draw() {
   background(50);
+  rect(280,qy2,10,40);
+  qy2= qy2+u2
+   if(qy2>460)
+  {u2= -u2
+  }
+  if(qy2<0)
+  {u2= -u2
+  }
   rect(150,qy,10,40);
   qy= qy+u
   if(disparo){
-    dx= dx+10
+    dx= dx+20
   }
   if(dx>width){
     disparo = false
@@ -38,6 +51,9 @@ function draw() {
   if(qy>height)
   {qy = random(-500,0)
   }
+ 
+    
+  
 
   ellipse(x, y, 20, 40)
   fill(200,20,90);
@@ -53,6 +69,7 @@ function draw() {
   if(y>=480){
     y=480
   }
+ 
   ellipse(dx,dy,10,5)
 
   
@@ -66,5 +83,6 @@ function draw() {
  
  
 }
+
 
 
