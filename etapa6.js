@@ -16,7 +16,7 @@ var raio= 10
 var raio2 = 5
 var largi = 20
 var comprimentoi = 20
-var corBranco = true
+
 
 var c = 0
 
@@ -80,7 +80,6 @@ function draw() {
   //COLISAO//
   if(dy>yi && dy<(20+yi)){
   if(dist(dx+5,0,xi,0)>0 &&dist(dx+5,0,xi,0)<20){
-   	console.log("colisao")
     colisao = true
     c=c+1
   }
@@ -89,15 +88,15 @@ function draw() {
   else {
     colisao = false
   }
-  console.log("c="+c);
-  if(c=0){
+  if(c==0){
     fill(255)
   }
-  else if(c=2){
+  else if(c==2){
     fill(255,0,0)
   }
-  else if(c=4)
+  else if(c>=4)
   { fill(0,104,139)
+  
   }
   
   
