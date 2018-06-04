@@ -94,10 +94,14 @@ function draw() {
   else if(c==2){
     fill(255,0,0)
   }
-  else if(c>=4)
+  else if(c==4)
   { fill(0,104,139)
-  
   }
+  else if(c==6){
+    largi=0
+  comprimentoi=0
+  }
+ 
   
   
   
