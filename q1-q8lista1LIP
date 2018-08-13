@@ -1,0 +1,293 @@
+QUESTAO 1
+
+#include <iostream>
+using namespace std;
+int main(){
+    int num1, num2, num3;
+    float media;
+
+    cout<<"Entre com o valor";
+    cin>>num1>>num2>>num3;
+    media = (num1+num2+num3)/3.0;
+    cout<<"A media e: "<<media;
+
+    return 0;
+
+}
+
+QUESTAO 2
+
+#include <iostream>
+using namespace std;
+int main(){
+    int segundos,horas,minutos;
+    cout<<"Entre com os segundos";
+    cin>>segundos;
+    horas = segundos/3600;
+    segundos = segundos%3600;
+    //minutos = segundos%3600;
+    minutos = segundos/60;
+    segundos = segundos%60;
+
+    cout<<horas<<" hora(s),"<<minutos<<" minuto(s),"<<segundos<<" segundo(s).";
+    return 0;
+}
+
+QUESTAO 3
+
+#include <iostream>
+using namespace std;
+int main(){
+    int num1,num2,num3;
+    cout<<"Entre com 3 numeros";
+    cin>>num1>>num2>>num3;
+     if((num1>num2) && (num1<num3)){
+        cout<<num1;
+    }
+     else if((num2>num1)&&(num2<num3)){
+        cout<<num2;
+    }
+     else if((num3>num1)&& (num3<num2)){
+        cout<<num3;
+    }
+     else if((num1<num2) &&(num1>num3)){
+        cout<<num1;
+     }
+     else if((num2<num1)&&(num2>num3)){
+        cout<<num2;
+     }
+     else if((num3<num1)&&(num3>num2)){
+        cout<<num3;
+     }
+    return 0;
+}
+
+QUESTAO 4
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n1,n2,n3,media;
+    cout<<"Entre com as notas";
+    cin>>n1>>n2>>n3;
+    media = (n1+n2+n3)/3;
+    if((media>=5)&& (n1>3)&&(n2>3)&&(n3>3)){
+        cout<<"Aprovado";
+    }
+    else if((media>=3)&&(n1<3)||(n2<3)||(n3<3)){
+        cout<<"Final";
+    }
+    else if((media<3)){
+        cout<<"Reprovado";
+    }
+    return 0;
+}
+
+QUESTAO 5
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+     char tipo;
+     int desconto,valor;
+    cout<<"entre com o tipo e o valor";
+    cin>>tipo>>valor;
+
+    switch(tipo)
+    {
+    case 'f' :
+        if(valor>500)
+        {
+            desconto = valor*0.1;
+            valor = valor - desconto;
+            cout<<"Preco do fogao com desconto eh: "<<valor;
+        }
+        else
+        {
+            desconto = valor*0.05;
+            valor = valor-desconto;
+            cout<<"Preco do fogao com desconto eh: "<<valor;
+        }
+        break;
+    case 'g' :
+        if(valor>2000)
+        {
+            desconto = valor*0.3;
+            valor = valor - desconto;
+            cout<<"Preco da geladeira com desconto eh: "<<valor;
+        }
+        if(valor>=1000 && valor<=2000)
+        {
+            desconto = valor*0.2;
+            valor = valor - desconto;
+            cout<<"Preco da geladeira com desconto eh: "<<valor;
+        }
+        if(valor<1000)
+        {
+            desconto = valor*0.1;
+            valor = valor - desconto;
+            cout<<"Preco da geladeira com desconto eh: "<<valor;
+        }
+        break;
+        default : cout<<"Codigo invalido!";
+        return 0;
+    }
+}
+
+
+QUESTAO 6
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,centena,dezena,unid;
+    cout<<"Entre com um valor";
+    cin>>n;
+    centena = n/100;
+    dezena = (n%100)/10;
+    unid = (n%100)%10;
+    cout<<centena<<' '<<dezena<<' '<<unid;
+    return 0;
+}
+
+QUESTAO 7 
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int px,py,px2,py2,pxentre,pyentre;
+    cout<<"Entre com os pontos xy do triangulo";
+    cin>>px>>py>>px2>>py2;
+    cout<<"Entre com os pontos p saber se esta dentro ou nao";
+    cin>>pxentre>>pyentre;
+    if((pxentre>=px && pxentre<=px2 && pyentre>=py && pyentre<=py2) || (pxentre<=px && pxentre>=px2 && pyentre<=py && pyentre>=py2))
+    {
+        cout<<"O ponto ("<<pxentre<<","<<pyentre<<") esta dentro";
+    }
+    else
+    {
+        cout<<"O ponto ("<<pxentre<<","<<pyentre<<") esta fora";
+    }
+    return 0;
+}
+
+QUESTAO 8 
+
+#include <iostream>
+using namespace std;
+int main (){
+int n;
+
+cout<<"entre com a data";
+cin>>n;
+if(n%7==1){
+cout<<"O dia "<<n<<" sera uma quarta feira";
+}
+if(n%7==2){
+cout<<"O dia "<<n<<" sera uma quinta feira";
+}
+if(n%7==3){
+cout<<"O dia "<<n<<" sera uma sexta feira";
+}
+if(n%7==4){
+cout<<"O dia "<<n<<" sera um sabado";
+}
+if(n%7==5){
+cout<<"O dia "<<n<<" sera um domingo";
+}
+if(n%7==6){
+cout<<"O dia "<<n<<" sera uma segunda feira";
+}
+if(n%7==0){
+cout<<"O dia "<<n<<" sera uma terca feira";
+}
+if(n<1 || n>28){
+cout<<"INVALIDO";
+}
+return 0;
+}
+
+QUESTAO 9 com erro no ascII
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    int n1,n2,op,soma,mult,divisao,sub;
+    cout<<"Entre com os numeros e a operacao";
+    cin>>n1>>n2>>op;
+
+    if(op=='+'){
+        op = 1;
+    }
+    if(op =='-'){
+        op = 2;
+    }
+    if(op =='*'){
+        op = 3;
+    }
+    if(op=='/'){
+        op = 4;
+    }
+
+    switch(op)
+    {
+
+    case 1 :
+        soma = n1+n2;
+        cout<<n1<<' '<<op<<' '<<n2<<" = "<<soma;
+        break;
+
+
+    case 2 :
+        sub = n1-n2;
+        cout<<n1<<' '<<op<<' '<<n2<<" = "<<sub;
+        break;
+
+    case 3 :
+        mult = n1*n2;
+        cout<<n1<<' '<<op<<' '<<n2<<" = "<<mult;
+        break;
+
+
+    case 4 :
+        divisao = n1/n2;
+        cout<<n1<<' '<<op<<' '<<n2<<" = "<<divisao;
+        break;
+
+
+    default :
+        cout<<"INVALIDO!";
+
+    }
+    return 0;
+}
+
+QUESTAO 10
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+    int ano;
+    cout<<"Entre com o ano";
+    cin>>ano;
+
+    if((ano%4==0 && ano%100!=0) || (ano%400==0))
+    {
+        cout<<"O ano "<<ano<<" eh bissexto!";
+    }
+    else
+    {
+        cout<<"O ano "<<ano<<" nao eh bissexto!";
+    }
+    return 0;
+}
+
+
