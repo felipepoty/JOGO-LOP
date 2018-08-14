@@ -212,62 +212,42 @@ cout<<"INVALIDO";
 return 0;
 }
 
-QUESTAO 9 com erro no ascII
+QUESTAO 9 
 
 #include <iostream>
 using namespace std;
-
-int main ()
-{
-    int n1,n2,op,soma,mult,divisao,sub;
-    cout<<"Entre com os numeros e a operacao";
-    cin>>n1>>n2>>op;
-
-    if(op=='+'){
-        op = 1;
-    }
-    if(op =='-'){
-        op = 2;
-    }
-    if(op =='*'){
-        op = 3;
-    }
-    if(op=='/'){
-        op = 4;
-    }
-
-    switch(op)
-    {
-
-    case 1 :
-        soma = n1+n2;
-        cout<<n1<<' '<<op<<' '<<n2<<" = "<<soma;
-        break;
-
-
-    case 2 :
-        sub = n1-n2;
-        cout<<n1<<' '<<op<<' '<<n2<<" = "<<sub;
-        break;
-
-    case 3 :
-        mult = n1*n2;
-        cout<<n1<<' '<<op<<' '<<n2<<" = "<<mult;
-        break;
-
-
-    case 4 :
-        divisao = n1/n2;
-        cout<<n1<<' '<<op<<' '<<n2<<" = "<<divisao;
-        break;
-
-
-    default :
-        cout<<"INVALIDO!";
-
-    }
-    return 0;
+int main(){
+int n,n1,n2,soma,sub,div,mult;
+char op;
+cout<<"Entre com a operação!";
+cin>>n1>>n2>>op;
+if(op=='+'){
+    op=1;
 }
+else if(op=='-'){
+    op=2;
+}
+else if(op=='*'){
+    op=3;
+}
+else if (op=='/'){
+    op=4;
+}
+switch(op){
+case 1 : soma = n1+n2;
+    cout<<n1<<' '<<"+"<<' '<<n2<<" = "<<soma;break;
+case 2 : sub = n1-n2;
+    cout<<n1<<' '<<"-"<<' '<<n2<<" = "<<sub;break;
+case 3 : mult = n1*n2;
+    cout<<n1<<' '<<"*"<<' '<<n2<<" = "<<mult;break;
+case 4 : div = n1/n2;
+    cout<<n1<<' '<<"/"<<' '<<n2<<" = "<<div;break;
+default : cout<<"INVALIDO!";
+
+}
+return 0;
+}
+
 
 QUESTAO 10
 
