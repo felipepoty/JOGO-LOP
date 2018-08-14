@@ -1,0 +1,51 @@
+QUESTAO 3
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x,i,cont,div;
+    cout<<"Entre com o numero!";
+    cin>>x;
+    cont=0;
+    div=x/10000;
+    for(i=1; i<x; i++)
+    {
+        if(x%i==0)
+        {
+            cont+=1;
+        }
+    }
+    if(cont<=2 )
+    {
+        if(div>=1)
+        {
+            cout<<"eh primo e tem 5 algarismos no minimo";
+
+        }
+        else
+        {
+            cout<<"eh primo e nao tem 5 algarismos";
+
+        }
+    }
+    if(cont>2)
+    {
+        if(div>=1)
+        {
+            cout<<"nao eh primo e tem 5 algarismos no minimo";
+
+        }
+        else
+        {
+            cout<<"Nao eh primo e nao tem 5 algarismos";
+
+        }
+
+    }
+
+    return 0;
+
+}
+
+
