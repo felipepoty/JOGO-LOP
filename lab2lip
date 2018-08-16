@@ -99,3 +99,37 @@ int main()
     cout<<menor;
     return 0;
 }
+
+QUESTAO 5
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,menor,z;
+    cout<<"entre com os numeros";
+    cin>>n;
+    menor=n;
+    z=n;
+    while(n!=0)
+    {
+
+        cin>>n;
+        if(n<menor && n!=0)
+        {
+            menor=n;
+
+        }
+        if(n!=menor && n<z && n>menor && n!=0)
+        {
+            z=n;
+        }
+
+    }
+    cout<<"O menor valor foi: "<<menor<<" e o segundo menor foi: "<<z;
+    return 0;
+
+}
+
+QUESTAO 6
+
