@@ -1,0 +1,73 @@
+QUESTAO 1 
+#include <iostream>
+using namespace std;
+void divisao(int,int,int& ,int&);
+
+int main(){
+int n1,n2,c,d;
+cout<<"ENTRA COM OS NUMEROS"<<endl;
+cin>>n1>>n2;
+divisao(n1,n2,c,d);
+cout<<"Quociente = "<<c<<", Resto = "<<d;
+return 0;
+}
+void divisao(int a,int b,int& c,int& d){
+c=a%b;
+d=a/b;
+}
+
+QUESTAO 2
+
+#include <iostream>
+using namespace std;
+void calcHora(int ,int&, int&, int&);
+int main(){
+int t,h,m,s;
+cout<<"Entre com os segundos"<<endl;
+cin>>t;
+calcHora(t,h,m,s);
+cout<<h<<"hora(s), "<<m<<"minuto(s), "<<s<<"segundo(s)";
+}
+void calcHora(int t, int& h, int& m, int& s){
+h=t/3600;
+m=t%3600;
+m=m/60;
+s=t%60;
+}
+
+QUESTAO 3
+#include <iostream>
+using namespace std;
+float calcNota(float, float, float);
+float menorNota(float, float, float);
+
+int main (){
+float n1,n2,n3;
+cout<<"Entre com as notas"<<endl;
+cin>>n1>>n2>>n3;
+cout<<calcNota(n1,n2,n3);
+}
+float menorNota(float n1, float n2, float n3){
+   float menor;
+   if(n1<n2 && n1<n3){
+    menor = n1;
+   }
+   if(n2<n1 && n2<n3){
+    menor = n2;
+   }
+   if(n3<n1 && n3<n2){
+    menor = n3;
+   }
+   return menor;
+
+}
+float calcNota(float n1, float n2, float n3){
+float soma,rec,falta;
+soma = n1+n2+n3;
+if(soma<15){
+        falta = 15 - soma;
+        rec=menorNota(n1,n2,n3) + falta;
+}
+return rec;
+
+}
