@@ -71,3 +71,37 @@ if(soma<15){
 return rec;
 
 }
+
+QUESTAO 4
+
+#include <iostream>
+using namespace std;
+int calcmmc(int,int);
+int calcmdc(int,int);
+int main (){
+    float n1,n2;
+    cout<<"Entre com os valores"<<endl;
+    cin>>n1>>n2;
+    cout<<"MDC = "<<calcmdc(n1,n2);
+
+}
+
+int calcmdc(int a,int b){
+    int mdc,i=1;
+    for(i=1;i<=b;i++){
+        if(a%i==0){
+             if(b%i==0){
+                mdc = i;
+             }
+        }
+    }
+    return mdc;
+}
+int calcmmc(int a,int b){
+    c=a*b
+
+}
+
+
+
+
