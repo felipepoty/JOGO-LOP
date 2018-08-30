@@ -82,7 +82,7 @@ int main (){
     float n1,n2;
     cout<<"Entre com os valores"<<endl;
     cin>>n1>>n2;
-    cout<<"MDC = "<<calcmdc(n1,n2);
+    cout<<"MDC = "<<calcmdc(n1,n2)<<endl<<"MMC = "<<calcmmc(n1,n2);
 
 }
 
@@ -98,9 +98,88 @@ int calcmdc(int a,int b){
     return mdc;
 }
 int calcmmc(int a,int b){
-    c=a*b
+    int mmc;
+    mmc=a*b/calcmdc(a,b);
+    return mmc;
+}
+
+QUESTAO 5 
+
+#include <iostream>
+using namespace std;
+int inverteNumero(int);
+int main(){
+int a,c,c2,c3,c4,n1,n2;
+cout<<"Entre com os numeros"<<endl;
+cin>>n1>>n2;
+if(inverteNumero(n1)>inverteNumero(n2))cout<<"Verdadeiro";
+else cout<<"Falso";
+
+return 0;
+}
+
+int inverteNumero(int a){
+    int certo,c,c2,c3,c4;
+    c=(a%10)*1000;
+    c2=((a/10)%10)*100;
+    c3=((a/100)%10)*10;
+    c4=(a/1000);
+    certo = c+c2+c3+c4;
+
+return certo;
+}
+
+QUESTAO 6 ERRADA!
+#include <iostream>
+using namespace std;
+ int jj(char);
+ int main(){
+    int pontos,cont=0;
+    char r;
+    char letraj;
+    char letra2j;
+    char letra3j;
+    char letra4j;
+    char letra5j;
+    char letraj2;
+    char letra2j2;
+    char letra3j2;
+    char letra4j2;
+    char letra5j2;
+    cout<<"Entre com a ref"<<endl;
+    cin>>r;
+    cout<<"Entre com as letras jogador um!"<<endl;
+    cin>>letraj>>letra2j>>letra3j>>letra4j>>letra5j;
+    cout<<"Entre com as letras jogador dois!"<<endl;
+    cin>>letraj2>>letra2j2>>letra3j2>>letra4j2>>letra5j2;
+        do{
+       if(letraj==r) pontos+=3;
+        else if(letra2j==r) pontos+=3;
+        else if(letra3j==r) pontos+=3;
+        else if(letra4j==r) pontos+=3;
+        else if(letra5j==r) pontos+=3;
+
+     /* if(letraj||letra2j||letra3j||letra4j||letra5j)=r){ pontos+=3;
+      }*/
+      if(jj(r)==jj(letraj)) pontos+=1;
+      if(jj(r)==jj(letra2j)) pontos +=1;
+      if(jj(r)==jj(letra3j)) pontos +=1;
+      if(jj(r)==jj(letra4j)) pontos +=1;
+      if(jj(r)==jj(letra5j)) pontos +=1;
+
+      cont+=1;
+        } while(cont<5);
+        cout<<"Pontos do jogador um: "<<pontos;
 
 }
+int jj(char r){
+    int verdade = 1, falso = 0;
+    if(r>='A' && r<='Z') return verdade;
+    else return falso;
+}
+
+
+
 
 
 
