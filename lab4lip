@@ -178,6 +178,54 @@ int jj(char r){
     else return falso;
 }
 
+QUESTAO 7 ERRO
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+int verifica(int,int,int);
+int sortear(int&,int&,int&);
+int main(){
+ int n1j,n2j,n3j,n1f,n2f,n3f,sorteio1=0,sorteio2=0,sorteio3=0,pontos=0;
+ cout<<"Entre com os numeros de joao: "<<endl;
+ cin>>n1j>>n2j>>n3j;
+ cout<<"Entre com os numeros de felipe: "<<endl;
+ cin>>n1f>>n2f>>n3f;
+ sortear(sorteio1,sorteio2,sorteio3);
+ if(verifica(n1j,n2j,n3j)>verifica(n1f,n2f,n3f)){
+    cout<<"Joao ganhou com "<<verifica(n1j,n2j,n3j)<<" pontos!";
+ }
+ if(verifica(n1j,n2j,n3j)<verifica(n1f,n2f,n3f)){
+    cout<<"Felipe ganhou com "<<verifica(n1f,n2f,n3f)<<" pontos!";
+    }
+ if(verifica(n1j,n2j,n3j)==verifica(n1f,n2f,n3f)){
+    cout<<"Empate! Ambos fizeram "<<verifica(n1f,n2f,n3f)<<" pontos!";
+ }
+
+
+}
+ int verifica(int n1, int n2, int n3){
+    int pontos=0,sorteio1=0,sorteio2=0,sorteio3=0;
+    if(n1==sorteio1||sorteio2||sorteio3){
+        pontos+=1;
+    }
+    if(n2==sorteio1||sorteio2||sorteio3){
+        pontos+=1;
+    }
+    if(n3==sorteio1||sorteio2||sorteio3){
+        pontos +=1;
+    }
+
+}
+int sortear(int& sorteio1, int& sorteio2, int&sorteio3){
+sorteio1 =  rand()%20;
+sorteio2=  rand()%20;
+sorteio3=  rand()%20;
+cout<<"Os numeros sorteados foram: "<<sorteio1<<' '<<sorteio2<<' '<<sorteio3<<endl;
+}
+
+
+
+
 
 
 
