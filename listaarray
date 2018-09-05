@@ -1,0 +1,85 @@
+QUESTAO 1
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int quant,vendas[30],valor,i=0,cont=0;
+    cout<<"Entre com a quantidade de vendas"<<endl;
+    cin>>quant;
+    cout<<"Entre com o valor das vendas"<<endl;
+    for(i=0; i<quant; i++)
+    {
+        cin>>vendas[i];
+    }
+    cout<<"Entre com a comparacao"<<endl;
+    cin>>valor;
+    for(i=0; i<quant; i++)
+    {
+        if(vendas[i]==valor) cont+=1;
+    }
+        if(cont>0) cout<<"Existe uma venda no valor: R$"<<valor<<endl;
+        else cout<<"Nao existe uma venda com essa comparacao";
+        return 0;
+    }
+
+
+QUESTAO 2
+
+#include <iostream>
+using namespace std;
+int main(){
+    int quant,vendas[30],i=0,cont=0,j=0;
+    cout<<"Entre com a quantidade de vendas"<<endl;
+    cin>>quant;
+    cout<<"Entre com o valor das vendas"<<endl;
+    for(i=0;i<quant;i++){
+        cin>>vendas[i];
+    }
+    for(i=0;i<quant;i++){
+        for(j=0;j<quant;j++){
+            if(vendas[i]==vendas[j]) cont+=1;
+        }
+    }
+    if(cont>quant) cout<<"Ocorreram vendas do mesmo valor"<<endl;
+    else cout<<"Nao ocorreram vendas do mesmo valor";
+    return 0;
+}
+
+QUESTAO 3
+
+#include <iostream>
+using namespace std;
+int main(){
+    int quant,vendas[30],i=0,cont[30]={0},j=0,cont1=0,cont2=0,valor;
+    cout<<"Entre com a quantidade de vendas"<<endl;
+    cin>>quant;
+    cout<<"Entre com o valor das vendas"<<endl;
+    for(i=0;i<quant;i++){
+        cin>>vendas[i];
+    }
+    for(i=0;i<quant;i++){
+        for(j=0;j<quant;j++){
+            if(vendas[i]==vendas[j]) cont[i]+=1;
+
+        }
+    }
+    for(i=0;i<quant;i++){
+
+       /* for(j=0;j<quant;j++){
+            if(cont[i]==cont[j]) cont1+=1;
+            else cont2+=1;
+                */
+       cout<<"Cont "<<i<<": "<<cont[i]<<endl;
+       }
+       //SUBSTITUIR OS IGUAIS POR -1
+       //NO VETOR COTNADOR MOSTRAR OS VALORES DIFERENTES DE -1
+       return 0;
+        }
+
+    /*if(cont>quant) cout<<"Ocorreram "<<(cont-cont2)/quant<<"do mesmo valor"<<endl;
+    else cout<<"Nao ocorreram vendas do mesmo valor";*/
+
+
+
