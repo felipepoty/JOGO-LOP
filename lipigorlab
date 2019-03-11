@@ -1,0 +1,123 @@
+
+Q1: 
+#include <iostream>
+using namespace std;
+int main(){
+    int num,pos1,pos2,pos3,pos4;
+    cin>>num;
+    pos1 = num/1000;
+    pos2 = num/100%10;
+    pos3 = num/10%10;
+    pos4 = num%10;
+    cout<<pos4<<pos3<<pos2<<pos1;
+    return 0;
+
+
+
+}
+
+Q2:
+#include<iostream>
+using namespace std;
+int main(){
+    float novo,calc,salario;
+    char plano;
+
+    cin>>plano;
+    cin>>salario;
+    switch(plano){
+        case 'A' : calc=salario/10;
+                   novo=calc+salario;
+                   cout<<novo;
+                   break;
+        case 'B' : calc=salario/10 + salario/20;
+                   novo=calc+salario;
+                   cout<<novo;
+                   break;
+        case 'C' : calc=salario/5;
+                   novo=calc+salario;
+                   cout<<novo;
+                   break;
+        default : cout<<"ERRO";
+
+    }
+
+    return 0;
+
+}
+
+Q3:
+#include<iostream>
+using namespace std;
+int main(){
+    float temp;
+    cin>>temp;
+    if(temp>=-100 && temp<=-30){
+        cout<<"Multissimo frio";
+    }
+    else if(temp>-30 && temp<=-5){
+        cout<<"Muito frio";
+    }
+    else if(temp>-5 && temp<=10){
+        cout<<"Frio";
+    }
+    else if(temp>10 && temp<=25){
+        cout<<"Ameno";
+    }
+    else if(temp>25 && temp<=40){
+        cout<<"Quente";
+    }
+    else if (temp>40 && temp<=100){
+        cout<<"Muito quente";
+    }
+    else{
+        cout<<"Indeterminado";
+    }
+    return 0;
+}
+
+Q4:
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(){
+    int numero,raiz,quadrado;
+    cin>>numero;
+    if(numero>=0){
+        raiz = sqrt(numero);
+        cout<<raiz;
+    }
+    else{
+        quadrado = numero*numero;
+        cout<<quadrado;
+    }
+    return 0;
+}
+
+Q5:
+#include<iostream>
+using namespace std;
+int main(){
+    int n1,n2,n3;
+    cin>>n1>>n2>>n3;
+    if(n1>n2 && n1>n3 && n2>n3){
+        cout<<n3<<" "<<n2<<" "<<n1;
+    }
+    else if(n1>n2 && n1>n3 && n3>n2){
+        cout<<n2<<" "<<n3<<" "<<n1;
+    }
+    else if(n2>n1 && n2>n3 && n1>n3){
+        cout<<n3<<" "<<n1<<" "<<n2;
+    }
+    else if(n2>n1 && n2>n3 && n3>n1){
+        cout<<n1<<" "<<n3<<" "<<n2;
+    }
+    else if(n3>n1 && n3>n2 && n1>n2){
+        cout<<n2<<" "<<n1<<" "<<n3;
+    }
+    else if(n3>n1 && n3>n2 && n2>n1){
+        cout<<n1<<" "<<n2<<" "<<n3;
+    }
+    return 0;
+}
+
