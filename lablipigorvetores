@@ -1,5 +1,39 @@
 bit.do/LIP520191LAB5
+Q1 
+#include <iostream>
+using namespace std;
+int main(){
+    int n,cont=0;
+    bool imprimir;
+    cin>>n;
+    float vet[n];
+    for(int i=0;i<n;i++){
+        cin>>vet[i];
+    }
+    for(int i=0;i<n;i++){
+            imprimir = true;
+    for(int j=0;j<n;j++){
+            if(vet[i]==vet[j]){
+                if(j>=i){
+                cont++;
+                }
+                else{
+                    imprimir = false;
+                    break;
+                }
+            }
 
+        }
+        if(imprimir){
+        cout<<vet[i]<<" se repete "<<cont<<" vezes"<<endl;
+        cont=0;
+        }
+
+
+}
+}
+
+Q2
 #include <iostream>
 using namespace std;
 int main(){
