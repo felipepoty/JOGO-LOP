@@ -1,0 +1,146 @@
+q1:
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int M[n][n];
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n;j++){
+            if(i==j){
+                cout<<"1";
+            }
+            else{
+                cout<<"0";
+            }
+        }
+        cout<<endl;
+
+    }
+
+}
+
+q2:
+#include <iostream>
+using namespace std;
+int main (){
+    int n,mult1=1,i=0,j=0,mult2=1;
+    cin>>n;
+    if(n>3){
+        int M[n][n],aux[n],soma1=0,soma2=0,soma3=0;mult1=1,i=0,j=0;
+        //linha
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n;j++){
+                cin >>M[i][j];
+                    if(i==0){
+                        soma1+=M[i][j];
+                    }
+                    if(i==j){
+                        mult1*=M[i][j];
+                    }
+                    soma3+=M[i][j];
+                    cout<<M[i][j];
+            }
+            cout<<endl;
+
+
+        }
+        for (int j=0;j<n;j++){
+            for (int i=0;i<n;i++){
+                if(i==2){
+                soma2+=M[j][i];
+                }
+            }
+        }
+        for(int j=n-1;j>=0;j--){
+            mult2*=M[i][j];
+            i++;
+
+        }
+        cout<<"Soma primeira linha: "<<soma1<<endl;
+        cout<<"Soma terceira coluna: "<<soma2<<endl;
+        cout<<"Produto diagonal principal: "<<mult1<<endl;
+        cout<<"Soma de todos os numeros: "<<soma3<<endl;
+        cout<<"produto diagonal secundaria: "<<mult2;
+
+    }
+
+}
+
+q3:
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int M[n][n],C[n][n],cont=0;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>M[i][j];
+            cout<<M[i][j];
+            }
+            cout<<endl;
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            C[i][j]=M[j][i];
+            cout<<C[i][j];
+        }
+        cout<<endl;
+    }
+    for (int i=0;i<n;i++){
+        for (int j=0;j<n;j++){
+            if(C[i][j]==C[j][i]){
+                cont++;
+            }
+        }
+    }
+    if(cont==n*n){
+        cout<<"A matriz eh cimetrica";
+    }
+    else{
+        cout<<"A matriz nao eh cimetrica";
+    }
+}
+
+q4:
+
+#include <iostream>
+using namespace std;
+int main(){
+int n,m,l,cont=0;
+cin>>n>>m;
+int M[n][m];
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+        cin>>M[i][j];
+        cout<<M[i][j];
+    }
+    cout<<endl;
+}
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+        for(int k=i;k<n;k++){
+            if(i==k){
+                l=j+1;
+            }
+            else{
+                l=0;
+            }
+            for(;l<m;l++){
+                if(M[i][j]==M[k][l]&&(i!=k || j!=l)){
+                    cont++;
+                }
+            }
+        }
+    }
+}
+if(cont>0){
+    cout<<"Existe elementos repetidos!";
+}
+else{
+    cout<<"Nao existe elementos repetidos!";
+}
+}
