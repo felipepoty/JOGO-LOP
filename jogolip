@@ -1,0 +1,94 @@
+#include "sfml.h"
+
+int main()
+{
+    float xjogador = 400;
+    float yjogador = 300;
+    float xbala = 400;
+    float ybala = 400;
+    float speed = 5;
+    float xinimigo = 400;
+    float yinimigo = 100;
+    float x1obstaculo = 350;
+    float x2obstaculo = 450;
+    float y1obstaculo = 300;
+    float y2obstaculo = 300;
+    bool mouse = false;
+
+
+    //cria a janela com tamanho 640x480 pixels
+    SFML sfml(800,600,"Meu jogo!");
+
+    //define a cor de fundo como preto
+    sfml.background(0,0,0);
+
+    //início do laço principal do jogo
+    while (sfml.windowIsOpen())
+    {
+
+
+        //apaga o conteúdo da janela
+        sfml.clear();
+        if (sfml.keyIsDown(SFML::Key::Left))
+        {
+            xjogador-=speed;
+
+
+        }
+        else if (sfml.keyIsDown(SFML::Key::Right))
+        {
+            xjogador+=speed;
+
+
+        }
+        else if (sfml.keyIsDown(SFML::Key::Up))
+        {
+            yjogador-=speed;
+
+        }
+        else if (sfml.keyIsDown(SFML::Key::Down))
+        {
+            yjogador+=speed;
+
+
+        }
+
+
+
+        if (sfml.mouseLeftButtonIsPressed())
+        {
+                mouse = true;
+
+        }
+        if(mouse){
+            ybala -= 3;
+        }
+        if(ybala<=0){
+            mouse = false;
+            ybala = yjogador+50;
+            xbala = xjogador;
+        }
+
+
+        //Desenha uma ellipse no centro da tela
+        sfml.ellipse(xjogador-50, yjogador-50, 100, 100);
+
+        if(mouse) sfml.ellipse(xbala-3.5, ybala-80, 7, 7);
+        sfml.rect(xinimigo-50, yinimigo-50, 80, 80);
+        sfml.strokeWeight(3);
+        sfml.line(x1obstaculo,y1obstaculo,x2obstaculo,y2obstaculo);
+        x1obstaculo += 3;
+        x2obstaculo +=3;
+        if(x1obstaculo>800)
+        {
+            x1obstaculo = -100;
+            x2obstaculo = 0;
+        }
+
+        //mostra o conteúdo na janela
+        sfml.display();
+
+    }
+
+    return 0;
+}
