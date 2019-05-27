@@ -2,6 +2,7 @@
 
 int main()
 {
+    int speedbala = 3;
     float xjogador = 400;
     float yjogador = 300;
     float xbala = 400;
@@ -9,10 +10,8 @@ int main()
     float speed = 5;
     float xinimigo = 400;
     float yinimigo = 100;
-    float x1obstaculo = 350;
-    float x2obstaculo = 450;
-    float y1obstaculo = 300;
-    float y2obstaculo = 300;
+    float xobstaculo = 350;
+    float yobstaculo = 350;
     int cont = 0;
     bool mouse = false;
 
@@ -63,7 +62,7 @@ int main()
         }
         if(mouse){
             cont++;
-            ybala -= 3;
+            ybala -= speedbala;
             if(cont == 1){
                 ybala = yjogador+50;
                 xbala = xjogador;
@@ -73,22 +72,21 @@ int main()
             mouse = false;
             cont = 0;
         }
-        if(ybala == y1obstaculo && (xbala >= x1obstaculo && xbala <= x2obstaculo)){
-            speed = -speed;
+        if((ybala >= yobstaculo-10 && ybala <= yobstaculo+10) && (xbala >= xobstaculo && xbala <= xobstaculo+100)){
+            speedbala *= -1;
         }
+
 
         sfml.ellipse(xjogador-50, yjogador-50, 100, 100);
 
         if(mouse) sfml.ellipse(xbala-3.5, ybala-80, 7, 7);
         sfml.rect(xinimigo-50, yinimigo-50, 80, 80);
         sfml.strokeWeight(3);
-        sfml.line(x1obstaculo,y1obstaculo,x2obstaculo,y2obstaculo);
-        x1obstaculo += 3;
-        x2obstaculo +=3;
-        if(x1obstaculo>800)
+        sfml.rect(xobstaculo-15, yobstaculo-15, 100, 10);
+        xobstaculo += 3;
+        if(xobstaculo>785)
         {
-            x1obstaculo = -100;
-            x2obstaculo = 0;
+            xobstaculo = -100;
         }
 
         //mostra o conteúdo na janela
