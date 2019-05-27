@@ -13,6 +13,7 @@ int main()
     float x2obstaculo = 450;
     float y1obstaculo = 300;
     float y2obstaculo = 300;
+    int cont = 0;
     bool mouse = false;
 
 
@@ -61,16 +62,21 @@ int main()
 
         }
         if(mouse){
+            cont++;
             ybala -= 3;
+            if(cont == 1){
+                ybala = yjogador+50;
+                xbala = xjogador;
+            }
         }
         if(ybala<=0){
             mouse = false;
-            ybala = yjogador+50;
-            xbala = xjogador;
+            cont = 0;
+        }
+        if(ybala == y1obstaculo && (xbala >= x1obstaculo && xbala <= x2obstaculo)){
+            speed = -speed;
         }
 
-
-        //Desenha uma ellipse no centro da tela
         sfml.ellipse(xjogador-50, yjogador-50, 100, 100);
 
         if(mouse) sfml.ellipse(xbala-3.5, ybala-80, 7, 7);
