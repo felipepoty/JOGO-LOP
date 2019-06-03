@@ -1,4 +1,5 @@
 #include "sfml.h"
+#include <cstring>
 
 int main()
 {
@@ -13,7 +14,9 @@ int main()
     float xobstaculo = 350;
     float yobstaculo = 350;
     int cont = 0;
+    int contcolisao = 0;
     bool mouse = false;
+    char frase[150];
 
 
     //cria a janela com tamanho 640x480 pixels
@@ -21,12 +24,14 @@ int main()
 
     //define a cor de fundo como preto
     sfml.background(0,0,0);
+    sfml.textSize(16);
 
     //início do laço principal do jogo
     while (sfml.windowIsOpen())
     {
 
-
+        sprintf(frase,"Ja ocorreu %d", contcolisao);
+        sfml.text(frase, 200, 20);
         //apaga o conteúdo da janela
         sfml.clear();
         if (sfml.keyIsDown(SFML::Key::Left))
@@ -71,9 +76,16 @@ int main()
         if(ybala<=0){
             mouse = false;
             cont = 0;
+            speedbala*= -1;
         }
-        if((ybala >= yobstaculo-10 && ybala <= yobstaculo+10) && (xbala >= xobstaculo && xbala <= xobstaculo+100)){
+        if(ybala>=600){
+            mouse = false;
+            cont = 0;
+            speedbala*= -1;
+        }
+        if(mouse && (ybala >= yobstaculo-5 && ybala <= yobstaculo+5) && (xbala >= xobstaculo && xbala <= xobstaculo+100)){
             speedbala *= -1;
+            contcolisao +=1;
         }
 
 
