@@ -1,0 +1,125 @@
+quest 1 :
+#include <iostream>
+using namespace std;
+int main (){
+    float x1,x2,aux;
+    char op;
+    cin>>op;
+    cin>>x1>>x2;
+    switch(op){
+    case '+':
+        aux = x1+x2;
+        cout<<aux;
+        break;
+    case '-':
+        aux = x1-x2;
+        cout<<aux;
+        break;
+     case '/':
+        aux = x1/x2;
+        cout<<aux;
+        break;
+     case '*':
+        aux = x1*x2;
+        cout<<aux;
+        break;
+
+    }
+return 0;
+
+}
+
+quest 2:
+#include <iostream>
+using namespace std;
+int main(){
+    float nota1,nota2,nota3,media;
+    cin>>nota1>>nota2>>nota3;
+    media = (nota1+nota2+nota3)/3.0;
+    if(media>=5 && nota1>3 && nota2>3 && nota3>3){
+        cout<<"APROVADO"<<endl;
+    }
+    else if(media>=3 && media<5){
+        cout<<"FINAL"<<endl;
+    }
+    else if(media>=5 && (nota1<3 || nota2<3 || nota3<3)){
+        cout<<"FINAL"<<endl;
+    }
+    else if(media<3){
+        cout<<"REPROVADO"<<endl;
+    }
+
+return 0;
+}
+
+quest 3:
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+int num,prim,seg,terc;
+cin>>num;
+prim = num%10;
+seg = num/10%10;
+terc = num/100;
+if((pow(prim,3)+pow(seg,3)+pow(terc,3))== num){
+    cout<<"ARMSTRONG"<<endl;
+
+}
+else{
+    cout<<"NAO EH"<<endl;
+}
+}
+
+quest4:
+#include<iostream>
+using namespace std;
+int main(){
+int num,prim,seg,terc,soma;
+cin>>num;
+prim = num%10;
+seg = num/10%10;
+terc = num/100;
+soma = prim+seg+terc;
+cout<<soma<<endl;
+}
+
+quest5:
+#include<iostream>
+using namespace std;
+int main(){
+    float valor,novo;
+    cin>>valor;
+    valor<20 ? novo = valor*1.8: novo = valor*1.4;
+    cout<<novo;
+}
+
+quest 6:
+#include <iostream>
+using namespace std;
+int main (){
+    float peso,h,imc;
+    cin>>peso>>h;
+    imc = (peso/(h*h));
+    int imc2=imc*10;
+    switch (imc2){
+        case 0 ... 184:
+            cout<<"Abaixo do peso"<<endl;
+            break;
+        case 185 ... 249:
+            cout<<"Peso normal"<<endl;
+            break;
+        case 250 ... 299:
+            cout<<"Sobrepeso"<<endl;
+            break;
+        case 300 ... 349:
+            cout<<"Obesidade grau 1"<<endl;
+            break;
+        case 350 ... 399:
+            cout<<"Obesidade grau 2"<<endl;
+            break;
+        default:
+            cout<<"Obesidade grau 3"<<endl;
+    }
+    cout<<imc;
+}
